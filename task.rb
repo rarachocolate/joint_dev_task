@@ -5,7 +5,8 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names = ["田中", "佐藤", "佐々木", "高橋", "斉藤"]
+  names = ["田中", "佐藤", "佐々木", "高橋"]
+  names.push("斉藤")
   names.each do |name|
     puts name
   end
@@ -18,7 +19,7 @@ def q2
   # 以下に回答を記載
   array = array1 + array2
   array.each do |animal|
-    puts animal
+    puts animalsy
   end
 
 end
@@ -45,6 +46,8 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
+  puts array1.empty?
+  puts array2.empty?
 
 end
 
