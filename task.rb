@@ -144,9 +144,13 @@ def q15
   # 以下に回答を記載
   if data1.has_key?(:age)
     puts "OK"
+  else   
+    puts "NG"
   end
   
-  unless data2.has_key?(:age)
+  if data2.has_key?(:age)
+    puts "OK"
+  else   
     puts "NG"
   end
 end
