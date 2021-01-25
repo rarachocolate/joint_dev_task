@@ -87,7 +87,7 @@ puts book.name
 class User
 
   # コードを追加
-
+  
 end
 
 class Zoo

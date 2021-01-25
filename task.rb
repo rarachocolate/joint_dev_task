@@ -164,6 +164,19 @@ end
 
 class UserQ17
   # 以下に回答を記載
+  def initialize(name:, age:, gender:)
+    @name = name
+    @age = age
+    @gender = gender
+  end
+
+  def info 
+    puts <<~EOS
+      名前:#{@name}
+      年齢:#{@age}
+      性別:#{@gender}
+    EOS
+  end
 
 end
 
@@ -179,7 +192,18 @@ end
 
 class UserQ18
   # 以下に回答を記載
+  def initialize(name:, age:)
+    @name = name
+    @age = age
+  end
 
+  def introduce 
+    if @age <= 15
+      "はいさいまいど〜，#{@name}です！！！"
+    else
+      "こんにちは、#{@name}と申します。宜しくお願いいたします。"
+    end
+  end
 end
 
 def q18
@@ -193,8 +217,8 @@ end
 
 class Item
   # 以下を修正して下さい
-
-  def initialize(name)
+  attr_reader :name
+  def initialize(name:)
     @name = name
   end
 end
@@ -207,12 +231,33 @@ end
 
 class UserQ20
   # 以下に回答を記載
+  attr_reader :name, :age
+    def initialize(name:, age:)
+      @name = name
+      @age = age
+    end
 
 end
 
 class Zoo
   # 以下に回答を記載
+  attr_reader :name, :fee
+  def initialize(name:, entry_fee:)
+    @name = name
+    @fee = entry_fee
+  end
 
+  def info_entry_fee(user)
+    if user.age >= 0 && user.age <= 5
+      puts "#{user.name}さんの入場料は#{@fee[:infant]}円です"
+    elsif user.age >= 6 && user.age <=12
+      puts "#{user.name}さんの入場料は#{@fee[:children]}円です"
+    elsif user.age >= 13 && user.age <= 64
+      puts "#{user.name}さんの入場料は#{@fee[:adult]}円です"
+    else  
+      puts "#{user.name}さんの入場料は#{@fee[:senior]}円です"
+    end
+  end
 end
 
 
