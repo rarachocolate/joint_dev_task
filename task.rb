@@ -241,21 +241,21 @@ end
 
 class Zoo
   # 以下に回答を記載
-  attr_reader :name, :fee
   def initialize(name:, entry_fee:)
     @name = name
     @fee = entry_fee
   end
 
   def info_entry_fee(user)
-    if user.age >= 0 && user.age <= 5
-      puts "#{user.name}さんの入場料は#{@fee[:infant]}円です"
-    elsif user.age >= 6 && user.age <=12
-      puts "#{user.name}さんの入場料は#{@fee[:children]}円です"
-    elsif user.age >= 13 && user.age <= 64
-      puts "#{user.name}さんの入場料は#{@fee[:adult]}円です"
-    else  
-      puts "#{user.name}さんの入場料は#{@fee[:senior]}円です"
+    case user.age
+    when 0..5
+      puts "#{user.name}の入場料金は#{@fee[:infant]}円です"
+    when 6..12
+      puts "#{user.name}の入場料金は#{@fee[:children]}円です"
+    when 13..64
+      puts "#{user.name}の入場料金は#{@fee[:adult]}円です"
+    when 65..120
+      puts "#{user.name}の入場料金は#{@fee[:senior]}円です"
     end
   end
 end
